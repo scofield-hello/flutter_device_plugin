@@ -26,6 +26,14 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       deviceInfo = await FlutterDevicePlugin.deviceInfo;
+
+      print(deviceInfo.imsi);
+      print(deviceInfo.imei);
+      print(deviceInfo.operator);
+      print(deviceInfo.brand);
+      print(deviceInfo.model);
+      print(deviceInfo.platform);
+      print(deviceInfo.version);
     } on PlatformException catch (e) {
       print(e);
     }

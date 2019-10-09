@@ -19,7 +19,7 @@ open class DeviceMethodHandler(activity: Activity) : MethodChannel.MethodCallHan
 
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
         if (!checkPermissions()) {
-            result.error("PERMISSION_DENIED", "请先授予应用必要的权限.", null)
+            result.error("PERMISSION_DENIED", "请在授予应用必要的权限后重试.", null)
             requestPermissions()
         }
         when (call.method) {
